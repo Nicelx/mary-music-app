@@ -1,0 +1,43 @@
+.Greeting {
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+			-45deg,
+			#364f6b 0.03%,
+			#6b5072 42.25%,
+			#fc5185 97.82%
+		),
+		linear-gradient(0deg, #ffffff, #ffffff) no-repeat;
+
+}
+.Container {
+	display: flex;
+	flex-direction: column;
+	padding: 53px 16px 40px;
+}
+
+.ShowcaseContainer {
+	align-self: flex-start;
+	margin-left: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	height: 110px;
+}
+.ShowcaseText {
+	color: var(--gray-start);
+	font-weight: 300;
+}
+.Title {
+	text-align: end;
+	color: white;
+	align-self: flex-end;
+}
+.TitleUp {
+	line-height: 18px;
+}
+.TitleDown {
+	font-size: 40px;
+	line-height: 46px;
+}
