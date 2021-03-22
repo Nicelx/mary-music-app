@@ -1,0 +1,10 @@
+.GuideItem {
+	width: 216px;
+	height: 319px;
+	background-color: white;
+}
+.GuideText {
+	font-weight: 300;
+	color: var(--pink);
+	line-height: 16px;
+}
