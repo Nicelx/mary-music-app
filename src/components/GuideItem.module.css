@@ -1,10 +1,22 @@
 .GuideItem {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
 	width: 216px;
 	height: 319px;
 	background-color: white;
+	margin: 0 5px;
+	border-radius: 23px;
+}
+.GuideTextWrapper {
+	height: 50px;
+	text-align: center;
 }
 .GuideText {
 	font-weight: 300;
 	color: var(--pink);
 	line-height: 16px;
+}
+.GuideImage {
+	margin: auto;
 }
