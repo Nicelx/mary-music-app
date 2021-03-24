@@ -1,12 +1,17 @@
 .GuideItem {
-	display: flex;
+	display: none;
 	flex-direction: column;
 	justify-content: flex-end;
 	width: 216px;
 	height: 319px;
 	background-color: white;
-	margin: 0 5px;
+	margin: 0 5px 12vh;
 	border-radius: 23px;
+	transform: translateX(100%);
+}
+.GuideItemActive {
+	display: flex;
+	transform: translateX(0);
 }
 .GuideTextWrapper {
 	height: 50px;
