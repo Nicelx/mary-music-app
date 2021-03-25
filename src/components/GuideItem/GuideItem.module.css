@@ -7,11 +7,11 @@
 	background-color: white;
 	margin: 0 5px 12vh;
 	border-radius: 23px;
-	transform: translateX(100%);
+	opacity: 0;
 }
 .GuideItemActive {
 	display: flex;
-	transform: translateX(0);
+	animation: slide 0.8s ease-out forwards;
 }
 .GuideTextWrapper {
 	height: 50px;
@@ -25,3 +25,16 @@
 .GuideImage {
 	margin: auto;
 }
+
+
+@keyframes slide {
+	from {
+		opacity: 0;
+		transform: translateX(20vw);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+
+	}
+} 
