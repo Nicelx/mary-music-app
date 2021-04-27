@@ -5,6 +5,14 @@
 	--gray-light: #F5F5F5;
 	--gray-start: #D6D6D6;
 
+	--background : linear-gradient(
+		-45deg,
+		#364f6b 0.03%,
+		#6b5072 42.25%,
+		#fc5185 97.82%
+	),
+	linear-gradient(0deg, #ffffff, #ffffff) no-repeat;
+
 }
 
 .App {

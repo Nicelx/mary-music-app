@@ -1,4 +1,4 @@
-import { Greeting } from "./containers/Greeting";
+import { Greeting } from "./containers/Greeting/Greeting";
 import classes from "./App.module.css";
 
 function App() {

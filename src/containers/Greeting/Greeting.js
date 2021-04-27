@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import classes from "./Greeting.module.css";
-import { GuideItem } from "./../components/GuideItem/GuideItem";
-import { guide1, guide2, guide3 } from "../images";
-import { Button } from "./../components/Button/Button";
+import { GuideItem } from "../../components/GuideItem/GuideItem";
+import { guide1, guide2, guide3 } from "../../images";
+import { Button } from "../../components/Button/Button";
 
 const greetingData = [
 	{
