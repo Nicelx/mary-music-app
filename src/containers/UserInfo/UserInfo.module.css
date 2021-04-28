@@ -1,0 +1,35 @@
+.Top {
+	height: 144px;
+	padding: 20px 25px 20px 16px;
+	background: var(--background);
+	border-radius: 0 0 48px 0;
+	display: flex;
+	align-items: center;
+	text-align: start;
+}
+
+.Avatar {
+	width: 104px;
+	height: 104px;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 2px solid var(--white);
+}
+.TopInfo {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-left: 15px;
+}
+.UserName {
+	font-size: 1.1rem;
+	color: var(--white);
+	line-height: 21px;
+	margin-bottom: 5px;
+}
+.UserSubInfo {
+	font-size: 0.8rem;
+	color: var(--gray-user-info);
+	margin-bottom: 5px;
+}
+

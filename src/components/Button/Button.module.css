@@ -8,3 +8,8 @@
 	font-weight: 100;
 	align-self: flex-end;
 }
+.ButtonIcon {
+	width: 33px;
+	height: 33px;
+	border-radius: 50%;
+}
