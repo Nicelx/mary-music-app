@@ -1,24 +1,41 @@
 import React from 'react'
 import classes from './UserInfo.module.css';
-import { Button } from '../../components/Button/Button';
+import {Button, ImageHolder} from '../../components'
+import { ReactComponent as AddFriendIcon } from "../../images/icons/addFriend.svg";
+import { ReactComponent as MessageIcon } from "../../images/icons/message.svg";
 
-export const UserInfo = () => {
+export const UserInfo = (props) => {
+	const {user} = props.user;
+	const {name, city, birthday,avatar} = user
 	return (
 		<div className = {classes.UserInfo}>
 			<header className = {classes.Top}>
-				<img className = {classes.Avatar}src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQceBV9lla57T_I9ajBeJ5P9gJ6nNe1D1M4RQ&usqp=CAU" alt=""/>
-				<div className = {classes.TopInfo}>
-					<span className = {classes.UserName}>User Name</span>
-					<span className = {classes.UserSubInfo}>Place</span>
-					<span className = {classes.UserSubInfo}>Date</span>
+				<div className = {classes.LeftGroup}>
+					<img className = {classes.Avatar}src={avatar} alt=""/>
+					<div className = {classes.TopInfo}>
+						<span className = {classes.UserName}>{name}</span>
+						<span className = {classes.UserSubInfo}>{city}</span>
+						<span className = {classes.UserSubInfo}>{birthday}</span>
+					</div>
 				</div>
-				<div>
-					<Button variant = 'icon'>f</Button>
-					<Button variant = 'icon'>m</Button>
+				
+				<div className = {classes.Buttons}>
+					<Button className = {classes.Button}><AddFriendIcon/></Button>
+					<Button className = {classes.Button}><MessageIcon/></Button>
 				</div>
 			</header>
 
-			<main className = {classes.Main}></main>
+			<main className = {classes.Main}>
+				<h1 className = {classes.TitleTopFive}>top-5 music : mode </h1>
+				<div className = {classes.TopFive}>
+					<ImageHolder src = {avatar}/>
+					<ImageHolder src={avatar} alt=""/>
+					<ImageHolder src={avatar} alt=""/>
+					<ImageHolder src={avatar} alt=""/>
+					<ImageHolder src={avatar} alt=""/>
+					<ImageHolder src={avatar} alt=""/>
+				</div>
+			</main>
 			<nav className = {classes.Navigation}></nav>
 		</div>
 	)

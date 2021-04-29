@@ -1,11 +1,10 @@
 import React from "react";
 import classes from "./Button.module.css";
 
-export const Button = ({variant, support, onClick, children}) => {
-	
+export const Button = ({support, onClick, children,className}) => {
 	const supportImg = support ? <img src={support} alt="" /> : null;
 	const clx = [classes.Button];
-	if (variant === 'icon') clx.push(classes.ButtonIcon)
+	if (className) clx.push(className);
 
 
 	return (
