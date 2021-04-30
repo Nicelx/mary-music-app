@@ -59,3 +59,16 @@
 	padding-top: 20px;
 }
 
+.TitleTopFive {
+	font-size: 1.2rem;
+	line-height: 20px;
+	font-weight: 300;
+	margin-bottom: 47px;
+}
+.TopFive {
+	display: flex;
+	overflow-x: auto;
+	overflow-y:hidden;
+	padding: 0px 16px 66px 16px;
+	gap: 8px;
+}

@@ -7,7 +7,7 @@ export const ImageHolder = ({src, alt, className}) => {
 
 	return (
 		<div className = {clx.join(' ')}>
-			<img className = {classes.Image}src={src} alt={alt}/>
+			<img draggable = 'false' className = {classes.Image}src={src} alt={alt}/>
 			<button className = {classes.PlayButton}></button>
 		</div>
 	)

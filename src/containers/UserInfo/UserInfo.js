@@ -1,12 +1,35 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import classes from './UserInfo.module.css';
-import {Button, ImageHolder} from '../../components'
+import {Button, MusicItem} from '../../components'
 import { ReactComponent as AddFriendIcon } from "../../images/icons/addFriend.svg";
 import { ReactComponent as MessageIcon } from "../../images/icons/message.svg";
+import { useState } from 'react';
+import { set } from 'mobx';
 
 export const UserInfo = (props) => {
 	const {user} = props.user;
 	const {name, city, birthday,avatar} = user
+
+	const [x, setX] = useState('')
+
+	const carouselRef = useRef();
+
+	const dragStart = (e) => {
+		const scroll = carouselRef.current.scrollLeft
+		setX(e.clientX + scroll)
+		carouselRef.current.onMouseMove = (e) => dragEnd
+	}
+
+	const dragEnd = e => {
+		const xM = e.clientX + carouselRef.current.scrollLeft
+		const diff = x - xM;
+		// carouselRef.current.scroll(diff, e.clientY)
+		// setX(prev => prev + diff)
+		// console.log(x, e)
+		carouselRef.current.scrollLeft += diff;
+		// carouselRef.current.style.transform = `translateX(${diff}px)`;
+	}
+
 	return (
 		<div className = {classes.UserInfo}>
 			<header className = {classes.Top}>
@@ -27,13 +50,13 @@ export const UserInfo = (props) => {
 
 			<main className = {classes.Main}>
 				<h1 className = {classes.TitleTopFive}>top-5 music : mode </h1>
-				<div className = {classes.TopFive}>
-					<ImageHolder src = {avatar}/>
-					<ImageHolder src={avatar} alt=""/>
-					<ImageHolder src={avatar} alt=""/>
-					<ImageHolder src={avatar} alt=""/>
-					<ImageHolder src={avatar} alt=""/>
-					<ImageHolder src={avatar} alt=""/>
+				<div className = {classes.TopFive} onMouseDown = {dragStart} onMouseUp = {dragEnd} onMouseLeave = {dragEnd} ref = {carouselRef}>
+					<MusicItem title = 'my music item' numOrder = '1' src = {avatar}/>
+					<MusicItem title = 'my music item' numOrder = '2' src={avatar} alt=""/>
+					<MusicItem title = 'my music item' numOrder = '3' src={avatar} alt=""/>
+					<MusicItem title = 'my music item' numOrder = '4' src={avatar} alt=""/>
+					<MusicItem title = 'my music item' numOrder = '5' src={avatar} alt=""/>
+					<MusicItem title = 'my music item' numOrder = '6' src={avatar} alt=""/>
 				</div>
 			</main>
 			<nav className = {classes.Navigation}></nav>
