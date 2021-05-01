@@ -67,7 +67,7 @@
 }
 .TopFive {
 	display: flex;
-	overflow-x: auto;
+	overflow-x: hidden;
 	overflow-y:hidden;
 	padding: 0px 16px 66px 16px;
 	gap: 8px;
