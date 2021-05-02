@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import classes from "./UserInfo.module.css";
-import { Button, MusicItem } from "../../components";
+import { Button, MostListeningMusicItem, TopFiveMusicItem } from "../../components";
 import { ReactComponent as AddFriendIcon } from "../../images/icons/addFriend.svg";
 import { ReactComponent as MessageIcon } from "../../images/icons/message.svg";
 import { useState } from "react";
@@ -10,46 +10,22 @@ export const UserInfo = (props) => {
 	const { user } = props.user;
 	const { name, city, birthday, avatar } = user;
 
-	const [x, setX] = useState("");
-	const [scroll, setScroll] = useState(0);
 
 	const carouselRef = useRef();
 
 	const dragStart = (e) => {
-		// const scroll = carouselRef.current.scrollLeft;
-		// setX(e.clientX + scroll);
-		// setScroll(scroll)
-		// carouselRef.current.onMouseMove = (e) => dragEnd;
-		// carouselRef.current.addEventListener("mousemove", dragMove);
 		carouselRef.current.onmousemove = (e) => debounce(() => dragMove(e));
-		// return function cleanup() {
-		//
-		// };
 	};
 
-	// const dragMoveDebounced = (e) => debounce(() => {
-	// 	const xM = e.clientX + carouselRef.current.scrollLeft;
-	// 	const diff = x - xM;
-	// 	console.log(x, e.clientX, diff, xM)
-	// 	carouselRef.current.scrollLeft += diff;
-	// })
 
 	const dragMove = (e) => {
-		// const xM = e.clientX + carouselRef.current.scrollLeft;
-		// const diff = xM - x;
-		// setX(xM)
-		// console.log(e )
-
 		carouselRef.current.scrollLeft -= e.movementX * 2.5;
 	};
 
 	const dragEnd = (e) => {
-		// carouselRef.current.style.transform = `translateX(${diff}px)`;
-		// const scroll = carouselRef.current.scrollLeft;
-		// setX(e.clientX + scroll);
 		carouselRef.current.onmousemove = null;
-		// carouselRef.current.removeEventListener("mousemove", dragMove);
 	};
+	console.log('render')
 
 	return (
 		<div className={classes.UserInfo}>
@@ -74,7 +50,10 @@ export const UserInfo = (props) => {
 			</header>
 
 			<main className={classes.Main}>
-				<h1 className={classes.TitleTopFive}>top-5 music : mode </h1>
+				<div className = 'mb47'>
+					<h1 className={classes.Title}>top-5 music : mode </h1>
+				</div>
+				
 				<div
 					className={classes.TopFive}
 					onMouseDown={dragStart}
@@ -82,13 +61,25 @@ export const UserInfo = (props) => {
 					onMouseLeave={dragEnd}
 					ref={carouselRef}
 				>
-					<MusicItem title="my music item" numOrder="1" src={avatar} />
-					<MusicItem title="my music item" numOrder="2" src={avatar} alt="" />
-					<MusicItem title="my music item" numOrder="3" src={avatar} alt="" />
-					<MusicItem title="my music item" numOrder="4" src={avatar} alt="" />
-					<MusicItem title="my music item" numOrder="5" src={avatar} alt="" />
-					<MusicItem title="my music item" numOrder="6" src={avatar} alt="" />
+					<TopFiveMusicItem title="my music item" numOrder="1" src={avatar} />
+					<TopFiveMusicItem title="my music item" numOrder="2" src={avatar} alt="" />
+					<TopFiveMusicItem title="my music item" numOrder="3" src={avatar} alt="" />
+					<TopFiveMusicItem title="my music item" numOrder="4" src={avatar} alt="" />
+					<TopFiveMusicItem title="my music item" numOrder="5" src={avatar} alt="" />
+					<TopFiveMusicItem title="my music item" numOrder="6" src={avatar} alt="" />
 				</div>
+				
+				<div className = 'mb20'>
+					<h2 className = {classes.Title}>most listening : mode</h2>
+				</div>
+
+				<div>
+					<MostListeningMusicItem title = "my music item" src = {avatar} album = 'album name'/>
+					<MostListeningMusicItem title = "my music item" src = {avatar} album = 'album name'/>
+					<MostListeningMusicItem title = "my music item" src = {avatar} album = 'album name'/>
+					<MostListeningMusicItem title = "my music item" src = {avatar} album = 'album name'/>
+				</div>
+
 			</main>
 			<nav className={classes.Navigation}></nav>
 		</div>

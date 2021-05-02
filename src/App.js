@@ -1,7 +1,7 @@
 import { Greeting } from "./containers/Greeting/Greeting";
 import { UserInfo } from './containers/UserInfo/UserInfo';
-import classes from "./App.module.css";
 import {user} from './store/user';
+import classes from "./App.module.css";
 
 function App() {
 	return (

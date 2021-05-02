@@ -59,11 +59,10 @@
 	padding-top: 20px;
 }
 
-.TitleTopFive {
+.Title {
 	font-size: 1.2rem;
 	line-height: 20px;
 	font-weight: 300;
-	margin-bottom: 47px;
 }
 .TopFive {
 	display: flex;

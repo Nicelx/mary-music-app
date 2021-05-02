@@ -1,11 +1,11 @@
 import React from 'react'
 import classes from './MusicItem.module.css'
 
-import { ImageHolder } from '../';
+import { ImageHolder } from '..';
 
-export const MusicItem = ({src, title, numOrder}) => {
+export const TopFiveMusicItem = ({src, title, numOrder}) => {
 	return (
-		<div className = {classes.MusicItem}>
+		<div className = {classes.TopFiveMusicItem}>
 			<ImageHolder src = {src}/>
 			<span className = {classes.Title}>{numOrder}. {title}</span>
 		</div>
