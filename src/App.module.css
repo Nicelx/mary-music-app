@@ -6,6 +6,7 @@
 	--gray-start: #D6D6D6;
 	--gray-user-info: #A9A9A9;
 	--gray-music-title: #5E5E5E;
+	--gray-most-listening: #484848;
 
 	--white: #fff;
 
@@ -23,7 +24,8 @@
 	text-align: center;
 }
 .Container {
-	width: 100%;
+	width: 360px;
+	margin: 0 auto;
 	height: 100vh;
 }
 body {

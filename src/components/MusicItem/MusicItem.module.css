@@ -11,6 +11,44 @@
 	user-select: none;
 }
 .MostListening {
+	position: relative;
 	display: flex;
+	align-items: center;
+	width: 100%;
 	padding: 20px 54px 20px 32px;
+	gap: 15px;
+	background-color: var(--white);
+}
+.MusicInfo {
+	display: flex;
+	flex-direction: column;
+}
+.MostListeningTitle {
+	color: var(--gray-most-listening);
+	margin-bottom: 7px;
+}
+.Album {
+	font-size: 0.7rem;
+	color: var(--gray-user-info);
+	margin-bottom: 16px;
+}
+.ListeningAmount {
+	font-size: 0.8rem;
+	color: var(--gray-most-listening);
+	margin-bottom: 9px;
+}
+.Reaction {
+	display: flex;
+	align-items: center;
+}
+.AddButton, .LikeButton, .SettingButton {
+	padding: 5px;
+	background-color: white;
+	width: 30px;
+	height: 30px;
+}
+.SettingButton {
+	position: absolute;
+	top: 20px;
+	right: 30%;
 }
