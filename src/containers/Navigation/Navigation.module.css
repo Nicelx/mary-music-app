@@ -1,0 +1,16 @@
+.Navigation {
+	position: fixed;
+	box-sizing: border-box;
+	bottom: 0px;
+	height: 54px;
+	padding: 0 30px;
+	width: inherit;
+	background-color: var(--white);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 0 0 24px 24px;
+}
+.GrayColor {
+	fill:var(--gray-icons);
+}

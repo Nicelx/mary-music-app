@@ -44,7 +44,7 @@ export const UserInfo = (props) => {
 						<AddFriendIcon />
 					</Button>
 					<Button className={classes.Button}>
-						<MessageIcon />
+						<MessageIcon className = {classes.IconColor}/>
 					</Button>
 				</div>
 			</header>

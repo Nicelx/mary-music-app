@@ -3,6 +3,7 @@ import classes from "./Greeting.module.css";
 import { GuideItem } from "../../components/GuideItem/GuideItem";
 import { guide1, guide2, guide3 } from "../../images";
 import { Button } from "../../components/Button/Button";
+import {useHistory} from 'react-router-dom'
 
 const greetingData = [
 	{
@@ -21,11 +22,14 @@ const greetingData = [
 
 export const Greeting = () => {
 	const [activeIndex, setActiveIndex] = useState(0);
+	const history = useHistory();
 
 	const moveGuideItemHandler = () => {
 		setActiveIndex((prev) => {
 			if (prev < 2) return prev + 1;
-			else return 0;
+			else {
+				history.push('/user')
+			}
 		});
 	};
 
@@ -39,6 +43,7 @@ export const Greeting = () => {
 			</GuideItem>
 		);
 	});
+	const buttonText = activeIndex < 2 ? 'next': 'start'
 
 	return (
 		<div className={classes.Greeting}>
@@ -57,7 +62,7 @@ export const Greeting = () => {
 
 				<div className={classes.Guide}>{greetItems}</div>
 
-				<Button onClick={moveGuideItemHandler}>start</Button>
+				<Button onClick={moveGuideItemHandler}>{buttonText}</Button>
 			</div>
 		</div>
 	);

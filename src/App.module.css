@@ -7,6 +7,7 @@
 	--gray-user-info: #A9A9A9;
 	--gray-music-title: #5E5E5E;
 	--gray-most-listening: #484848;
+	--gray-icons: #929FAD;
 
 	--white: #fff;
 
@@ -25,11 +26,11 @@
 }
 .Container {
 	width: 360px;
-	margin: 0 auto;
-	height: 100vh;
+	margin: auto auto;
 }
 body {
 	font-family: "Lato", "Roboto", sans-serif;
 	font-size: 14px;
 	font-weight: 400;
+	background-color: rgb(240, 240, 178);
 }
