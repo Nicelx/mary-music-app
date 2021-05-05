@@ -3,3 +3,4 @@ export {Button} from './Button/Button';
 export {ImageHolder} from './ImageHolder/ImageHolder';
 export {TopFiveMusicItem} from './MusicItem/TopFiveMusicItem'
 export { MostListeningMusicItem } from './MusicItem/MostListeningMusicItem';
+export { Post } from './Post/Post';

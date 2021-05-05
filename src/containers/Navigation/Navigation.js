@@ -10,11 +10,11 @@ import {ReactComponent as MessageIcon} from '../../images/icons/message.svg'
 export const Navigation = () => {
 	return (
 		<nav className={classes.Navigation}>
-			<Link to=""><NoteIcon/></Link>
-			<Link to=""><FriendsIcon/></Link>
-			<Link to=""><HomeIcon/></Link>
-			<Link to=""><MessageIcon className = {classes.GrayColor}/></Link>
-			<Link to=""><MenuIcon/></Link>
+			<Link to="/music"><NoteIcon/></Link>
+			<Link to="/friends"><FriendsIcon/></Link>
+			<Link to="/"><HomeIcon/></Link>
+			<Link to="/dialogs"><MessageIcon className = {classes.GrayColor}/></Link>
+			<Link to="/settings"><MenuIcon/></Link>
 		</nav>
 	)
 }

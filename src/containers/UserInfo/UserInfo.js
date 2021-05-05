@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { Button, MostListeningMusicItem, TopFiveMusicItem } from "../../components";
+import { Button, MostListeningMusicItem, TopFiveMusicItem, Post } from "../../components";
 import { Navigation } from './../Navigation/Navigation';
 
 import { ReactComponent as AddFriendIcon } from "../../images/icons/addFriend.svg";
@@ -26,6 +26,17 @@ export const UserInfo = (props) => {
 		carouselRef.current.onmousemove = null;
 	};
 	console.log("render");
+
+	const dummyUser = {
+		name : 'name',
+		avatar : avatar
+	}
+	const dummyMessage = {
+		date : new Date(),
+		text : 'hello lalala',
+		music: '',
+		likes: 5
+	}
 
 	return (
 		<div className={classes.UserInfo}>
@@ -73,7 +84,22 @@ export const UserInfo = (props) => {
 					<MostListeningMusicItem title="my music item" src={avatar} album="album name" />
 					<MostListeningMusicItem title="my music item" src={avatar} album="album name" />
 					<MostListeningMusicItem title="my music item" src={avatar} album="album name" />
+					<div className = {classes.SeeMore}>
+						<button>see more ::down</button>
+					</div>
 				</div>
+
+				<div className = {classes.CommonMessages}>
+					<div className = {classes.CommonMessagesTitle}>
+						<h2 className = {classes.Title}>common messages</h2>
+					</div>
+					<div className = {classes.Posts}>
+						<Post user = {dummyUser} message = {dummyMessage}/>
+						<Post user = {dummyUser} message = {dummyMessage}/>
+					</div>
+					<div className = {classes.Margin}></div>
+				</div>
+
 			</main>
 			<Navigation/>
 		</div>
