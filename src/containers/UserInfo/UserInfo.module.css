@@ -82,6 +82,21 @@
 	gap: 8px;
 }
 
+.SeeMore {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	height: 80px;
+}
+.SeeMoreText {
+	background-color: none;
+	border: none;
+	font-size: 0.9rem;
+	color: var(--gray-user-info);
+	margin: auto;
+}
+
 .Margin {
 	margin-bottom: 80px;
 }

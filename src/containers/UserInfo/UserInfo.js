@@ -85,7 +85,7 @@ export const UserInfo = (props) => {
 					<MostListeningMusicItem title="my music item" src={avatar} album="album name" />
 					<MostListeningMusicItem title="my music item" src={avatar} album="album name" />
 					<div className = {classes.SeeMore}>
-						<button>see more ::down</button>
+						<h2 className = {classes.SeeMoreText}>see more ::down</h2>
 					</div>
 				</div>
 
