@@ -1,5 +1,7 @@
 import React from 'react'
 import classes from './Post.module.css';
+import { Input,Button } from '../';
+
 
 export const Post = ({user, message}) => {
 	const {avatar, name} = user
@@ -22,9 +24,16 @@ export const Post = ({user, message}) => {
 					</div>
 
 					<div className = {classes.MusicAttachment}> music attachment</div>
+					<div className = {classes.Answers}>see answers</div>
 				</div>
 				
-				<div className = {classes.Reply}></div>
+				<div className = {classes.Reply}>
+					<Input className = {classes.Input} placholder = 'send the answer...' type="text" />
+					<div className = {classes.Likes}>
+						<span className = {classes.LikesCount}></span>
+						<Button className = {classes.LikeButton}></Button>
+					</div>
+				</div>
 
 			</div>
 		</div>
