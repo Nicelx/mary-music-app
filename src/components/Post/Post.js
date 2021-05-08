@@ -1,6 +1,7 @@
 import React from 'react'
 import classes from './Post.module.css';
-import { Input,Button } from '../';
+import { Input,ButtonIcon } from '../';
+import { ReactComponent as LikeIcon } from "../../images/icons/heart.svg";
 
 
 export const Post = ({user, message}) => {
@@ -30,8 +31,8 @@ export const Post = ({user, message}) => {
 				<div className = {classes.Reply}>
 					<Input className = {classes.Input} placholder = 'send the answer...' type="text" />
 					<div className = {classes.Likes}>
-						<span className = {classes.LikesCount}></span>
-						<Button className = {classes.LikeButton}></Button>
+						<span className = {classes.LikesCount}>x</span>
+						<ButtonIcon><LikeIcon/></ButtonIcon>
 					</div>
 				</div>
 

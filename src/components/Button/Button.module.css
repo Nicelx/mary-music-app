@@ -11,7 +11,11 @@
 .ButtonIcon {
 	width: 20px;
 	height: 20px;
+	padding: 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	border: none;
+	background-color: var(--white);
 }
