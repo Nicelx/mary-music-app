@@ -25,9 +25,21 @@
 .Name {
 	font-size: 0.9rem;
 }
-.Date {
+.Date, .LikesCount  {
 	font-size: 0.7rem;
 	color: var(--gray-user-info);
+}
+
+
+.Body {
+	margin-bottom: 30px;
+}
+.Answers {
+	padding: 10px;
+}
+.AnswersText {
+	color: var(--pink);
+	border-bottom: 1px dashed var(--pink);
 }
 .TextBox {
 	padding: 16px 8px;
@@ -35,4 +47,16 @@
 	border-radius: 8px;
 }
 
-
+.Reply {
+	display: flex;
+	align-items: center;
+	gap: 25px;
+}
+.Likes {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+}
+.LikesCount {
+	margin-bottom: 4px;
+}

@@ -25,13 +25,15 @@ export const Post = ({user, message}) => {
 					</div>
 
 					<div className = {classes.MusicAttachment}> music attachment</div>
-					<div className = {classes.Answers}>see answers</div>
+					<div className = {classes.Answers}>
+						<span className = {classes.AnswersText}>see answers</span> 
+					</div>
 				</div>
 				
 				<div className = {classes.Reply}>
 					<Input className = {classes.Input} placholder = 'send the answer...' type="text" />
 					<div className = {classes.Likes}>
-						<span className = {classes.LikesCount}>x</span>
+						<span className = {classes.LikesCount}>5</span>
 						<ButtonIcon><LikeIcon/></ButtonIcon>
 					</div>
 				</div>
