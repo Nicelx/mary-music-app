@@ -1,12 +1,18 @@
 import React from 'react'
 import classes from './Post.module.css';
-import { Input,ButtonIcon } from '../';
+import { Input,ButtonIcon,Song } from '../';
 import { ReactComponent as LikeIcon } from "../../images/icons/heart.svg";
 
 
 export const Post = ({user, message}) => {
 	const {avatar, name} = user
 	const {date, text, music, likes} = message
+
+	const dummySong = {
+		title : 'title',
+		length: 'x:xx'
+
+	}
 
 	return (
 		<div className = {classes.Post}>
@@ -24,7 +30,12 @@ export const Post = ({user, message}) => {
 						<span className = {classes.Text}>{text}</span>
 					</div>
 
-					<div className = {classes.MusicAttachment}> music attachment</div>
+					<div className = {classes.MusicAttachment}>
+						<Song song = {dummySong}/>
+						<Song song = {dummySong}/>
+						<Song song = {dummySong}/>
+						 music attachment
+					</div>
 					<div className = {classes.Answers}>
 						<span className = {classes.AnswersText}>see answers</span> 
 					</div>

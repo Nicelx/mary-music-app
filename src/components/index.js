@@ -6,3 +6,4 @@ export {TopFiveMusicItem} from './MusicItem/TopFiveMusicItem'
 export { MostListeningMusicItem } from './MusicItem/MostListeningMusicItem';
 export { Post } from './Post/Post';
 export { Input } from './Input/Input';
+export { Song } from './Song/Song';
