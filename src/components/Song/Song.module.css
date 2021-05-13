@@ -9,8 +9,25 @@
 	padding: 22px 20px;
 	border-radius: 24px;
 	background-color: var(--gray-light);
+	text-align: start;
 }
-.RightGroup {
+
+.ButtonIcon {
+	width: 26px;
+	background-color: var(--gray-light);
+}
+.LeftGroup, .RightGroup {
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
+}
+.LeftGroup {
+	gap: 15px;
+}
+.RightGroup {	
+	width: 60px;
+}
+.Length {
+	font-size: 0.8rem;
+	color: var(--gray-user-info)
 }

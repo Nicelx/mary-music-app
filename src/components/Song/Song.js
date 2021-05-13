@@ -9,13 +9,15 @@ export const Song = ({ song }) => {
 
 	return (
 		<div className={classes.Song}>
-			<ButtonIcon>
-				<PlayIcon />
-			</ButtonIcon>
+			<div className = {classes.LeftGroup}>
+				<ButtonIcon className={classes.ButtonIcon}>
+					<PlayIcon />
+				</ButtonIcon>
 				<span>{title}</span>
-			<div className = {classes.RightGroup}>
-				<span>{length}</span>
-				<ButtonIcon>
+			</div>
+			<div className={classes.RightGroup}>
+				<span className = {classes.Length}>{length}</span>
+				<ButtonIcon className={classes.ButtonIcon}>
 					<AddIcon />
 				</ButtonIcon>
 			</div>
