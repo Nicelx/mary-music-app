@@ -1,0 +1,26 @@
+.SignUp {
+	border-radius: 24px;
+	background: var(--background);
+	height: 100vh;
+}
+.Welcome { 
+	padding-top: 10vh;
+	text-align: center;
+	font-size: 40px;
+	color: var(--white);
+}
+.SignUpForm {
+	padding: 20vh 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	height: 160px;
+}
+
+.Input {
+	width: 80%;
+}
+.Button {
+	align-self: center;
+}

@@ -1,6 +1,8 @@
 import { Greeting } from "./containers/Greeting/Greeting";
 import { UserInfo } from './containers/UserInfo/UserInfo';
 import { Login } from './containers/Login/Login';
+import { SignUp } from './containers/SignUp/SignUp';
+
 import {user} from './store/user';
 import classes from "./App.module.css";
 import {
@@ -20,6 +22,9 @@ function App() {
 				</Route>
 				<Route path="/login" exact>
 					<Login />
+				</Route>
+				<Route path="/signup" exact>
+					<SignUp />
 				</Route>
 				<Route path="/greeting">
 					<Greeting />
