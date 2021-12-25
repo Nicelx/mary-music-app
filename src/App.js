@@ -1,7 +1,7 @@
 import { Greeting } from "./containers/Greeting/Greeting";
 import { UserInfo } from './containers/UserInfo/UserInfo';
-import { Login } from './containers/Login/Login';
-import { SignUp } from './containers/SignUp/SignUp';
+import { Login, SignUp } from './containers/Auth/auth';
+
 
 import {user} from './store/user';
 import classes from "./App.module.css";

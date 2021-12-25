@@ -1,4 +1,4 @@
-.SignUp {
+.Auth {
 	border-radius: 24px;
 	background: var(--background);
 	height: 100vh;
@@ -9,7 +9,7 @@
 	font-size: 40px;
 	color: var(--white);
 }
-.SignUpForm {
+.AuthForm {
 	padding: 20vh 20px;
 	display: flex;
 	flex-direction: column;

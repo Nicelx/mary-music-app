@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import classes from "./SignUp.module.css";
+import classes from "./Auth.module.css";
 
 import { Button } from "../../components/Button/Button";
 import { Input } from "../../components/Input/Input";
@@ -51,9 +51,9 @@ export const SignUp = () => {
 	}
 
 	return (
-		<div className={classes.SignUp}>
+		<div className={classes.Auth}>
 			<h1 className={classes.Welcome}>Welcome</h1>
-			<div className={classes.SignUpForm}>
+			<div className={classes.AuthForm}>
 				<Input className={classes.Input} placeholder="Login" onChange ={onLoginHandler} />
 				<Input className={classes.Input} placeholder="Name" onChange ={onNameChangeHandler} />
 				<Input className={classes.Input} placeholder="Password" onChange ={onPasswordHandler}/>
