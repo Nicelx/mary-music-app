@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Greeting } from "./containers/Greeting/Greeting";
 import { UserInfo } from './containers/UserInfo/UserInfo';
 import { Login, SignUp } from './containers/Auth/auth';
@@ -12,6 +13,9 @@ import {
   } from "react-router-dom";
 
 function App() {
+	const [token, setToken] = useState(null);
+	const [userId, setUserId] = useState(''); 
+
 	return (
 		<>
 			<Router>
@@ -20,7 +24,7 @@ function App() {
 				<Route path="/" exact>
 					<Greeting />
 				</Route>
-				<Route path="/login" exact>
+				<Route path="/login" token = {token} userId = {userId}exact>
 					<Login />
 				</Route>
 				<Route path="/signup" exact>
@@ -30,7 +34,7 @@ function App() {
 					<Greeting />
 				</Route>
 				<Route path="/user">
-					<UserInfo user = {user}/>
+					<UserInfo user = {user} userId = {userId}/>
 				</Route>
 				</Switch>
 			</div>

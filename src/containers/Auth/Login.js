@@ -25,11 +25,16 @@ export const Login = () => {
 			},
 			body: bodyToSend,
 		});
-		if (response.status === 201) {
-			history.push('./user')
-		}
+		// if (response.status === 201) {
+		// }
 		const data = await response.json();
-		console.log('data', data)
+
+		console.log(data)
+		localStorage.setItem('token', data.token );
+		localStorage.setItem('expiryDate', Date.now() + 3600000);
+		console.log(Date.now());
+		history.push('/user');
+		
 		}
 		catch(e) {
 			console.log(e);
