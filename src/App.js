@@ -24,8 +24,8 @@ function App() {
 				<Route path="/" exact>
 					<Greeting />
 				</Route>
-				<Route path="/login" token = {token} userId = {userId}exact>
-					<Login />
+				<Route path="/login"  exact>
+					<Login/>
 				</Route>
 				<Route path="/signup" exact>
 					<SignUp />

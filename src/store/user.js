@@ -4,11 +4,12 @@ class User {
 	constructor() {
 		makeObservable(this, {
 			user : observable,
-			getUser: computed
+			setUserId : action,
 		})
 	}
 
 	user = {
+		id : null,
 		name: 'name',
 		city: 'city',
 		birthday: 'date',
@@ -16,6 +17,9 @@ class User {
 	}
 	get getUser() {
 		return this.user
+	}
+	setUserId(userId) {
+		user.id = userId;
 	}
 }
 
