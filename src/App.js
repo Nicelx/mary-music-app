@@ -33,7 +33,7 @@ function App() {
 				<Route path="/greeting">
 					<Greeting />
 				</Route>
-				<Route path="/user">
+				<Route path="/user/:userId">
 					<UserInfo user = {user} userId = {userId}/>
 				</Route>
 				</Switch>

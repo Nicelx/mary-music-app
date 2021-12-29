@@ -1,4 +1,5 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
+import {useParams} from 'react-router-dom';
 import { Button, MostListeningMusicItem, TopFiveMusicItem, Post } from "../../components";
 import { Navigation } from './../Navigation/Navigation';
 
@@ -11,6 +12,8 @@ import classes from "./UserInfo.module.css";
 export const UserInfo = (props) => {
 	const { user } = props.user;
 	const { name, city, birthday, avatar } = user;
+	const {userId} = useParams();
+	
 
 	const carouselRef = useRef();
 
@@ -37,6 +40,12 @@ export const UserInfo = (props) => {
 		music: '',
 		likes: 5
 	}
+
+	useEffect(() => {
+		fetch(`http://localhost:8080/user/public/${userId}`).then(res => res.json()).then(data => {
+			console.log(data);
+		})
+	}, [])
 
 	return (
 		<div className={classes.UserInfo}>
