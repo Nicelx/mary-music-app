@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import {useParams} from 'react-router-dom';
 import { Button, MostListeningMusicItem, TopFiveMusicItem, Post } from "../../components";
 import { Navigation } from './../Navigation/Navigation';
@@ -10,10 +10,8 @@ import { debounce } from "./../../utils/utils";
 import classes from "./UserInfo.module.css";
 
 export const UserInfo = (props) => {
-	const { user } = props.user;
-	const { name, city, birthday, avatar } = user;
 	const {userId} = useParams();
-	
+	const [user, setUser] = useState({})
 
 	const carouselRef = useRef();
 
@@ -30,20 +28,19 @@ export const UserInfo = (props) => {
 	};
 	console.log("render");
 
-	const dummyUser = {
-		name : 'name',
-		avatar : avatar
-	}
+
 	const dummyMessage = {
 		date : new Date(),
 		text : 'hello lalala',
 		music: '',
 		likes: 5
 	}
+	const dummyUser = {}
 
 	useEffect(() => {
 		fetch(`http://localhost:8080/user/public/${userId}`).then(res => res.json()).then(data => {
-			console.log(data);
+			const {name, city, avatar, birthdate} = data;
+			setUser({name, city, avatar, birthdate})
 		})
 	}, [])
 
@@ -51,11 +48,11 @@ export const UserInfo = (props) => {
 		<div className={classes.UserInfo}>
 			<header className={classes.Top}>
 				<div className={classes.LeftGroup}>
-					<img className={classes.Avatar} src={avatar} alt="" />
+					<img className={classes.Avatar} src={user.avatar} alt="" />
 					<div className={classes.TopInfo}>
-						<span className={classes.UserName}>{name}</span>
-						<span className={classes.UserSubInfo}>{city}</span>
-						<span className={classes.UserSubInfo}>{birthday}</span>
+						<span className={classes.UserName}>{user.name}</span>
+						<span className={classes.UserSubInfo}>{user.city}</span>
+						<span className={classes.UserSubInfo}>{user.birthday}</span>
 					</div>
 				</div>
 
@@ -78,21 +75,21 @@ export const UserInfo = (props) => {
 					onMouseLeave={dragEnd}
 					ref={carouselRef}
 				>
-					<TopFiveMusicItem title="my music item" numOrder="1" src={avatar} />
-					<TopFiveMusicItem title="my music item" numOrder="2" src={avatar} alt="" />
-					<TopFiveMusicItem title="my music item" numOrder="3" src={avatar} alt="" />
-					<TopFiveMusicItem title="my music item" numOrder="4" src={avatar} alt="" />
-					<TopFiveMusicItem title="my music item" numOrder="5" src={avatar} alt="" />
-					<TopFiveMusicItem title="my music item" numOrder="6" src={avatar} alt="" />
+					<TopFiveMusicItem title="my music item" numOrder="1" src={user.avatar} />
+					<TopFiveMusicItem title="my music item" numOrder="2" src={user.avatar} alt="" />
+					<TopFiveMusicItem title="my music item" numOrder="3" src={user.avatar} alt="" />
+					<TopFiveMusicItem title="my music item" numOrder="4" src={user.avatar} alt="" />
+					<TopFiveMusicItem title="my music item" numOrder="5" src={user.avatar} alt="" />
+					<TopFiveMusicItem title="my music item" numOrder="6" src={user.avatar} alt="" />
 				</div>
 
 				<h2 className={classes.Title}>most listening : mode</h2>
 
 				<div>
-					<MostListeningMusicItem title="my music item" src={avatar} album="album name" />
-					<MostListeningMusicItem title="my music item" src={avatar} album="album name" />
-					<MostListeningMusicItem title="my music item" src={avatar} album="album name" />
-					<MostListeningMusicItem title="my music item" src={avatar} album="album name" />
+					<MostListeningMusicItem title="my music item" src={user.avatar} album="album name" />
+					<MostListeningMusicItem title="my music item" src={user.avatar} album="album name" />
+					<MostListeningMusicItem title="my music item" src={user.avatar} album="album name" />
+					<MostListeningMusicItem title="my music item" src={user.avatar} album="album name" />
 					<div className = {classes.SeeMore}>
 						<h2 className = {classes.SeeMoreText}>see more ::down</h2>
 					</div>
