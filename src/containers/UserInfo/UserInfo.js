@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
-import {useParams} from 'react-router-dom';
+import { useParams, useHistory } from "react-router-dom";
 import { Button, MostListeningMusicItem, TopFiveMusicItem, Post } from "../../components";
-import { Navigation } from './../Navigation/Navigation';
+import { Navigation } from "./../Navigation/Navigation";
 
 import { ReactComponent as AddFriendIcon } from "../../images/icons/addFriend.svg";
 import { ReactComponent as MessageIcon } from "../../images/icons/message.svg";
@@ -10,10 +10,11 @@ import { debounce } from "./../../utils/utils";
 import classes from "./UserInfo.module.css";
 
 export const UserInfo = (props) => {
-	const {userId} = useParams();
-	const [user, setUser] = useState({})
+	const { userId } = useParams();
+	const [user, setUser] = useState({});
 
 	const carouselRef = useRef();
+	const history = useHistory();
 
 	const dragStart = (e) => {
 		carouselRef.current.onmousemove = (e) => debounce(() => dragMove(e));
@@ -28,21 +29,32 @@ export const UserInfo = (props) => {
 	};
 	console.log("render");
 
-
 	const dummyMessage = {
-		date : new Date(),
-		text : 'hello lalala',
-		music: '',
-		likes: 5
-	}
-	const dummyUser = {}
+		date: new Date(),
+		text: "hello lalala",
+		music: "",
+		likes: 5,
+	};
+	const dummyUser = {};
 
 	useEffect(() => {
-		fetch(`http://localhost:8080/user/public/${userId}`).then(res => res.json()).then(data => {
-			const {name, city, avatar, birthdate} = data;
-			setUser({name, city, avatar, birthdate})
+		const token = localStorage.getItem("token");
+
+		fetch(`http://localhost:8080/user/public/${userId}`, {
+			method: "POST",
+			headers: {
+				Authorization: "Bearer " + token,
+			},
 		})
-	}, [])
+			.then((res) => {
+				if (res.ok) return res.json();
+			})
+			.then((data) => {
+				console.log(data);
+				const { name, city, avatar, birthdate } = data;
+				setUser({ name, city, avatar, birthdate });
+			});
+	}, []);
 
 	return (
 		<div className={classes.UserInfo}>
@@ -61,7 +73,7 @@ export const UserInfo = (props) => {
 						<AddFriendIcon />
 					</Button>
 					<Button className={classes.Button}>
-						<MessageIcon className = {classes.IconColor}/>
+						<MessageIcon className={classes.IconColor} />
 					</Button>
 				</div>
 			</header>
@@ -86,28 +98,43 @@ export const UserInfo = (props) => {
 				<h2 className={classes.Title}>most listening : mode</h2>
 
 				<div>
-					<MostListeningMusicItem title="my music item" src={user.avatar} album="album name" />
-					<MostListeningMusicItem title="my music item" src={user.avatar} album="album name" />
-					<MostListeningMusicItem title="my music item" src={user.avatar} album="album name" />
-					<MostListeningMusicItem title="my music item" src={user.avatar} album="album name" />
-					<div className = {classes.SeeMore}>
-						<h2 className = {classes.SeeMoreText}>see more ::down</h2>
+					<MostListeningMusicItem
+						title="my music item"
+						src={user.avatar}
+						album="album name"
+					/>
+					<MostListeningMusicItem
+						title="my music item"
+						src={user.avatar}
+						album="album name"
+					/>
+					<MostListeningMusicItem
+						title="my music item"
+						src={user.avatar}
+						album="album name"
+					/>
+					<MostListeningMusicItem
+						title="my music item"
+						src={user.avatar}
+						album="album name"
+					/>
+					<div className={classes.SeeMore}>
+						<h2 className={classes.SeeMoreText}>see more ::down</h2>
 					</div>
 				</div>
 
-				<div className = {classes.CommonMessages}>
-					<div className = {classes.CommonMessagesTitle}>
-						<h2 className = {classes.Title}>common messages</h2>
+				<div className={classes.CommonMessages}>
+					<div className={classes.CommonMessagesTitle}>
+						<h2 className={classes.Title}>common messages</h2>
 					</div>
-					<div className = {classes.Posts}>
-						<Post user = {dummyUser} message = {dummyMessage}/>
-						<Post user = {dummyUser} message = {dummyMessage}/>
+					<div className={classes.Posts}>
+						<Post user={dummyUser} message={dummyMessage} />
+						<Post user={dummyUser} message={dummyMessage} />
 					</div>
-					<div className = {classes.Margin}></div>
+					<div className={classes.Margin}></div>
 				</div>
-
 			</main>
-			<Navigation/>
+			<Navigation />
 		</div>
 	);
 };
